@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Big+Shoulders+Stencil+Text:wght@100..900&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Ga+Maamli&display=swap');
+
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #ef5350;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: auto;
+}
+
+.tite {
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 3.1rem;
+    font-weight: 900;
+    color: #333;
+    letter-spacing: 2px;
+    margin: 0 auto;
+}
+
+.tite::first-letter {
+    color: #fff; /* Color de la primera letra */
+    font-size: 3.5rem; /* Tamaño de la primera letra */
+    font-weight: 1000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 3rem;
+    position: relative; 
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+
+.card .pokemon {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background-color: #111;
+}
+
+main.blurred .card:not(.active) {
+    filter: blur(5px);
+    pointer-events: none; /* Evita que se pueda hacer hover en las otras cartas */
+}
+
+.card.active {
+    position: fixed;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%) scale(1.5);
+    width: 600px; /* Ajusta este valor para cambiar el ancho */
+    height: 450px; 
+    margin-top: 20px; /* Margen superior */
+    margin-bottom: 20px;
+    z-index: 10; /* Lleva la carta seleccionada al frente */
+    transition: transform 0.3s ease, z-index 0s ease 0s; /* Transición instantánea para el índice Z */
+}
+
+.pokemon {
+    border-radius: 10px;
+    width: 130px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.num-poke {
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    color: #999;
+    margin: 0.5rem 0;
+}
+
+.nombre-poke {
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.nombre-poke::first-letter {
+    color: #888; /* Color de la primera letra */
+    font-size: 2.5rem; /* Tamaño de la primera letra */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.tipo-bicho {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #dbff0f;
+    color: #222;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tipo-veneno {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #8c00ff;
+    color: #222;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tipo-planta {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #218021;
+    color: #222;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tipo-fuego {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #ff9900;
+    color: #222;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tipo-agua {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #00ccff;
+    color: #222;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tipo-volador {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #b4b4b4;
+    color: #222;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.info-extra {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    margin-top: 120px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: opacity 0.3s ease;
+    color: #fff;
+    pointer-events: none; /* Evita que el mouse interactúe con esta capa */
+}
+
+.izquierda {
+    text-align: left; 
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    width: 45%;
+}
+
+.derecha {
+    text-align: right;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    width: 45%; 
+}
+
+.descripcion {
+    margin-top: 10px; /* Ajusta el margen superior para separar la descripción */
+    text-align: center; /* Centra el texto de la descripción */
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.altura {
+    text-align: left; /* Alinea el texto hacia la izquierda */
+    margin-left: 10px;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.peso {
+    text-align: left; /* Alinea el texto hacia la izquierda */
+    margin-left: 10px;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.descripcion {
+    text-align: center; /* Alinea el texto hacia la izquierda */
+    margin-left: 10px;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.card:hover .info-extra {
+    opacity: 1;
+}
